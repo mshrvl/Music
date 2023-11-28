@@ -1,7 +1,19 @@
-fun main(args: Array<String>) {
-    println("Hello World!")
+fun main() {
+    val totalPrice = 10001.0
+    var discount = 0.0
+    val alwaysCust = true
+    var extraDisc = 0.01
 
-    // Try adding program arguments via Run/Debug configuration.
-    // Learn more about running applications: https://www.jetbrains.com/help/idea/running-applications.html.
-    println("Program arguments: ${args.joinToString()}")
+    if (totalPrice >= 1001 && totalPrice <= 10000) {
+        discount = 100.0
+    } else if (totalPrice >= 10001) {
+        discount = totalPrice * 0.05
+    }
+
+    if (alwaysCust) {
+        discount += totalPrice * extraDisc
+    }
+
+    val finalPrice = totalPrice - discount
+    println(finalPrice)
 }
